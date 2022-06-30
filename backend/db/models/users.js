@@ -4,8 +4,8 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    static associate({ Game }) {
-      User.hasMany(Game, { foreignKey: 'user_id' });
+    static associate() {
+
     }
   }
   User.init({
@@ -15,12 +15,16 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    username: {
+    login: {
       unique: true,
+      allowNull: false,
+      type: Sequelize.TEXT,
+    },
+    password: {
       allowNull: false,
       type: DataTypes.TEXT,
     },
-    password: {
+    scores: {
       allowNull: false,
       type: DataTypes.TEXT,
     },

@@ -7,9 +7,18 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      questions: {
+      description: {
         type: Sequelize.TEXT,
         allowNull: false,
+      },
+      answer: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      point: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        default: 0
       },
       theme_id: {
         type: Sequelize.INTEGER,

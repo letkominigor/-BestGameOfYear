@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Question extends Model {
     static associate({ Theme }) {
-      Question.belongsTo(Theme, { foreignKey: 'theme_id' });
+      Question.Theme = Question.belongsTo(Theme, { foreignKey: 'theme_id' });
     }
   }
   Question.init({
@@ -15,15 +15,24 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    questions: {
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
+    },
+    answer: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    point: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      default: 0
     },
     theme_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Games',
+        model: 'Themes',
         key: 'id', // необязательно при дефолтном названии `id`
       },
     },
