@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     res.clearCookie('user_sid')
     res.redirect('/')
   } catch (error) {
-    res.send('hueta')
+    res.send('error db')
   }
 
 });
