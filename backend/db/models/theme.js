@@ -4,8 +4,8 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Theme extends Model {
-    static associate({ Game }) {
-      Theme.belongsTo(Game, { foreignKey: 'game_id' });
+    static associate() {
+      Theme.Question = Theme.hasMany(Question, { foreignKey: 'theme_id' });
     }
   }
   Theme.init({
@@ -18,14 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     title: {
       type: DataTypes.TEXT,
       allowNull: false,
-    },
-    game_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'Games',
-        key: 'id', // необязательно при дефолтном названии `id`
-      },
     },
     createdAt: {
       allowNull: false,

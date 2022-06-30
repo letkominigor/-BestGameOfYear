@@ -11,14 +11,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      game_id: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        references: {
-          model: 'Games',
-          key: 'id', // необязательно при дефолтном названии `id`
-        },
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
