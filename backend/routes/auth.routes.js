@@ -1,16 +1,16 @@
 const authRouter = require('express').Router();
 const bcrypt = require('bcrypt');
 
-const { User } = require('../db/models/index');
+const { User } = require('../db/models/');
 
 
 // POST создать сессию (login, вход)
 authRouter.post('/', async (req, res) => {
   let user;
-  const { username, password } = req.body;
+  const { login, password } = req.body;
   try {
     user = await User.findOne({
-      where: { username },
+      where: { login },
     });
   } catch (error) {
     res.json({ error: 'Server error' });
