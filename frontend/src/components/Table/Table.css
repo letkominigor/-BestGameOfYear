@@ -1,55 +1,35 @@
+
 #table {
   position: relative;
-  top: 150px;
-  /* left: 50px; */
   text-align: center;
+  margin: 20px auto;
   width: 1500px;
   height: 300px;
+  top: 250px;
   left: -50px;
+  margin: auto;
 }
 
-/* #table tbody tr:nth-child(3n+1){
-	background:  #42dcd7;
+.td {
+  color: yellow;
+  font-weight: 500;
+  font-size: 78px;
 }
- 
-#table tbody tr:nth-child(3n+2){
-	background: #b06ac9;
-}
- 
-#table tbody tr:nth-child(3n+3){
-	background: #8edb4f;
-} */
 
 .tds {
-  /* border-color: #369886; */
-  /* color: #fff; */
-  /* box-shadow: 0 0 40px 40px #369886 inset, 0 0 0 0 #369886; */
-  /* -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
-  animation:tbs 3s infinite; */
-  border: yellow solid 1px;
-}
-
-td {
+  /* border: yellow solid 1px; */
   color: yellow;
   font-size: 78px;
   align-items: center;
   margin-right: 50px;
-  /* font-weight: 500; */
+  font-weight: 500;
 }
 
-/* #score {
-  font-size: 40px;
-  position: relative;
-  bottom: 100px;
-  left: 75%;
-} */
 
 .numberScores {
-  /* padding-top: 25%; */
   display: block;
   height: 100%;
-  color: yellow;
+  color: rgb(255, 255, 0);
   font-size: 78px;
   text-decoration: none;
 }
