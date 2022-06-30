@@ -1,13 +1,22 @@
 const questionsRouter = require('express').Router();
 const { Question } = require('../db/models');
+const { Theme } = require('../db/models');
 
 questionsRouter.get('/', async (req, res) => {
   const questions = await Question.findAll({
     raw: true,
-    include: [Question.Theme],
   });
-  console.log(questions);
-  res.json(questions);
+
+  const themes = await Theme.findAll({
+    raw: true,
+  });
+
+  const result = {
+    questions, themes
+  }
+  
+  console.log(result);
+  res.json(result);
 });
 
 
