@@ -1,8 +1,15 @@
+import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import NavBar from '../NavBar/NavBar';
+
 function App() {
   return (
-    <div className="App">
-      Hello World
-    </div>
+    <>
+      <NavBar />
+      <Routes>
+        
+      </Routes>
+    </>
   );
 }
 
