@@ -1,10 +1,12 @@
 import React from 'react';
+import Question from '../Question/Question';
 import Table from '../Table/Table';
 import './Main.css'
 
 function Main() {
   return (
   <>
+  {/* <Question /> */}
   <div className="flipper" id="target">
 
     <div className="front">
