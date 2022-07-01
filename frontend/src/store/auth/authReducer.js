@@ -16,6 +16,7 @@ export default function authReducer(state = initialState, action){
         id: action.payload.id,
         login: action.payload.login,
         scores: action.payload.scores,
+        // scores: 0,
       };
       return {...user}
     }
@@ -23,6 +24,7 @@ export default function authReducer(state = initialState, action){
       const user = {
         id: action.payload.id,
         login: action.payload.login,
+        // scores: action.payload.scores,
         scores: action.payload.scores,
       };
       return {...user}
@@ -31,10 +33,12 @@ export default function authReducer(state = initialState, action){
       return {}
     }
     case RIGHT_ANSWER: {
-      return {...state, scores: state.scores + action.payload.points}
+      console.log(typeof action.payload.point)
+      console.log(state.scores)
+      return {...state, scores: state.scores + action.payload}
     }
     case WRONG_ANSWER: {
-      return {...state, scores: state.scores - action.payload.points}
+      return {...state, scores: state.scores - action.payload}
     }
     default: return state
   }

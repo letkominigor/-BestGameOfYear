@@ -17,8 +17,9 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       scores: {
-        type: Sequelize.TEXT,
-        default: 0
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

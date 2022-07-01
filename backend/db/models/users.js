@@ -25,8 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
     },
     scores: {
-      type: DataTypes.TEXT,
-      default: 0
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      allowNull: false,
     },
     createdAt: {
       allowNull: false,
