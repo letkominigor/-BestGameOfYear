@@ -1,9 +1,9 @@
 import React from 'react';
-import './question.css';
+import './questions.css';
 
 
 
-const modalQuestion = ({questions, id, variants}) => {
+const ModalQuestion = ({questions, id}) => {
 
   return (
     <div id={id} className="quest">
@@ -15,9 +15,7 @@ const modalQuestion = ({questions, id, variants}) => {
       </div>
       <div className="quest-body">
         {
-          variants.map(x => (
-            <button key={x.id} className="click" type="button" name="authBatton">{x.answers}</button>
-          ))
+
         }
       </div>
     </div>
@@ -26,4 +24,4 @@ const modalQuestion = ({questions, id, variants}) => {
   );
 };
 
-export default modalQuestion;
+export default ModalQuestion;

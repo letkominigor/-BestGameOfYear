@@ -7,7 +7,6 @@ import Main from '../Main/Main';
 import Registration from '../Registration/Registration';
 import Login from '../Login/Login';
 
-
 function App() {
   return (
     <Provider store={store}>
