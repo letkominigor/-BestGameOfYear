@@ -21,6 +21,7 @@ function Table() {
         <td className="tds"><a className='numberScores' href='#10'>500</a></td>
       </tr>
       <tr>
+        
       <td className="td">Фильмы</td>
         <td className="tds"><a className='numberScores' href='#11'>100</a></td>
         <td className="tds"><a className='numberScores' href='#12'>200</a></td>

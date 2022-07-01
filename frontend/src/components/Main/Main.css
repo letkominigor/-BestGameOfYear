@@ -1,3 +1,4 @@
 body {
   background: url(../Table/table-fon.png);
+  -webkit-background-size: 100%;
 }
