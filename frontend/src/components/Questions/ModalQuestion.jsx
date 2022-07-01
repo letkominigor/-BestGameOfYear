@@ -11,6 +11,7 @@ const ModalQuestion = ({description, answer, id, point}) => {
 
 
   const [vision, setVision] = useState(false)
+  const [kek, setKek] = useState(true)
   const dispatch = useDispatch();
 
   const visionHell = useCallback((event) => {
@@ -23,9 +24,9 @@ const ModalQuestion = ({description, answer, id, point}) => {
   const answerHandler = useCallback((event) => {
     event.preventDefault();
     const otvet = event.target.answer.value
-
+    setKek(false)
     if (otvet.trim().toLowerCase() === answer.toLowerCase()) {
-      alert('Правильно! братОК')
+      alert('А ты харош!')
       setVision((ev) => !ev)
       dispatch({
         type: RIGHT_ANSWER, payload: point
@@ -42,13 +43,13 @@ const ModalQuestion = ({description, answer, id, point}) => {
   )
   
   return (<>
-    <td onClick={visionHell} className="tds numberScores">{point}</td>
+   {kek && (<td onClick={visionHell} className="tds numberScores">{point}</td>)}
     {vision && (
     <div className="quest-container">
     <h3 className="quest-title">{description}</h3>
     <form onSubmit={answerHandler}>
-      <input type="text" name="answer" autoComplete="off" />
-      <button type="submit">Ответить</button>
+      <input type="text" name="answer" className="ple" autoComplete="off" />
+      <button type="submit" sclassName="ple">Ответить</button>
     </form>
     </div>
 )}

@@ -28,7 +28,7 @@ export default function Registration(){
             }
             else{
                 dispatch({type: AUTH_REG, payload:responce});
-                navigate("/game");
+                navigate("/");
             }
         });
       }, [dispatch]);

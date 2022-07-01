@@ -20,8 +20,8 @@ export default function NavBar(){
 
     return(
             (user.login && (<nav className="navMenu">
-            {user.login}
-            {user.score}
+            <div className="navMenu" style={{'fontSize':'23px'}}>{user.login}{" "}</div>
+            <div className="navMenu" style={{'fontSize':'23px'}} >Points:{" "}{user.scores}</div>
                 <NavLink to="/game">Играть</NavLink>
                 <NavLink to="/logout" onClick={logoutHandler}>Выход</NavLink>
                 <div className="dot"></div>
