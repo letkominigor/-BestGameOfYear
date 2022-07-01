@@ -7,7 +7,7 @@ regRouter.route('/')
     const { login, password } = req.body;
     const user = await User.findOne({ where: { login } });
     if (user) {
-      res.send('Такой  уже зарегистрирован');
+      res.send({isRegistration: false});
     } else {
       const newUser = await User.create({
         login, password: await bcrypt.hash(password, 7),
