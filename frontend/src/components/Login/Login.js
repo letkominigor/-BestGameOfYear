@@ -29,7 +29,7 @@ export default function Login(){
             else{
                 console.log(responce)
                 dispatch({type: AUTH_LOGIN, payload:responce});
-                navigate("/game");
+                navigate("/");
             }
         });
       }, []);

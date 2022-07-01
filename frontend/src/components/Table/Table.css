@@ -12,7 +12,7 @@
 
 .td {
   color: yellow;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 78px;
 }
 
@@ -23,6 +23,8 @@
   align-items: center;
   margin-right: 50px;
   font-weight: 500;
+  right: 100px;
+  
 }
 
 
