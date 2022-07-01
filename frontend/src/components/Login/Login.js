@@ -1,18 +1,18 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AUTH_REG } from '../../store/auth/actionTypes';
-import "./Registration.css"
+import { AUTH_LOGIN } from '../../store/auth/actionTypes';
+import "../Registration/Registration.css"
 
-export default function Registration(){
+export default function Login(){
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const registrHandler = React.useCallback((event) => {
+    const loginHandler = React.useCallback((event) => {
         event.preventDefault();
         const login = event.target.login.value;
         const password = event.target.password.value;
-        fetch("/registrate", {
+        fetch("/auth", {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -23,11 +23,12 @@ export default function Registration(){
             }),
         }).then(responce => responce.json())
         .then(responce => {
-            if(responce.isRegistration === false){
-                alert("Такой пользователь уже существует")
+            if(responce.islogin === false){
+                alert("Логин или пароль не совпадает")
             }
             else{
-                dispatch({type: AUTH_REG, payload:responce});
+                console.log(responce)
+                dispatch({type: AUTH_LOGIN, payload:responce});
                 navigate("/game");
             }
         });
@@ -39,9 +40,10 @@ export default function Registration(){
             <div className="card-image">
                 <h2 className="card-heading">
                     Добро пожаловать
+                    Можете войти
                 </h2>
             </div>
-            <form className="card-form" onSubmit={registrHandler} >
+            <form className="card-form" onSubmit={loginHandler} >
                 <div className="input">
                     <input type="text" className="input-field" 
                         name="login" 
@@ -56,7 +58,7 @@ export default function Registration(){
                     <label className="input-label">Пароль</label>
                 </div>
                 <div className="action">
-                    <button type="submit" className="action-button">Зарегестрироваться</button>
+                    <button type="submit" className="action-button">Войти</button>
                 </div>
             </form>
         </div>

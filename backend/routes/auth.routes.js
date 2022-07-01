@@ -31,12 +31,12 @@ authRouter.post('/', async (req, res) => {
   }
 
   if (!isSame) {
-    res.json({ error: 'Error: password or login is incorrect' });
+    res.send({islogin: false});
     return;
   }
   req.session.user = user; // Логин, создание сессии
   
-  res.json({ user: req.session.user });
+  res.send(user);
   
 });
 

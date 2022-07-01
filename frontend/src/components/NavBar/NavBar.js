@@ -1,19 +1,38 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./NavBar.css"
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { AUTH_LOGOUT } from "../../store/auth/actionTypes";
 
 export default function NavBar(){
     const user = useSelector((state) => state.auth);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const logoutHandler = React.useCallback((event) => {
+        event.preventDefault();
+        fetch("/logout")
+        .then(res => {
+            dispatch({type: AUTH_LOGOUT});
+            navigate("/");
+        });
+    });
 
     return(
-        <nav className="navMenu">
+            (user.login && (<nav className="navMenu">
             {user.login}
-            <NavLink to="/game">Играть</NavLink>
-            <NavLink to="/registration">Регистрация</NavLink>
-            <NavLink to="/login">Вход</NavLink>
-            <NavLink to="/logout">Выход</NavLink>
-            <div className="dot"></div>
-        </nav>
+            {user.score}
+                <NavLink to="/game">Играть</NavLink>
+                <NavLink to="/logout" onClick={logoutHandler}>Выход</NavLink>
+                <div className="dot"></div>
+            </nav>)) 
+            || 
+            (<nav className="navMenu">
+                <NavLink to="/registration">Регистрация</NavLink>
+                <NavLink to="/login">Вход</NavLink>
+                <div className="dot"></div>
+            </nav>
+            )
+
     );
 }
