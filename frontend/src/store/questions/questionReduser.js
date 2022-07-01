@@ -1,4 +1,4 @@
-const INIT_QUESTIONS = 'INIT_QUESTIONS'
+export const INIT_QUESTIONS = 'INIT_QUESTIONS'
 
 const initialState = {
   themes: [],

@@ -29,7 +29,7 @@ export default function Registration(){
                 dispatch({type: AUTH_REG, payload:responce});
             }
         });
-      }, []);
+      }, [dispatch]);
 
 
     return(

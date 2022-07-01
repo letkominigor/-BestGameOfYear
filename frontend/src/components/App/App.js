@@ -6,7 +6,7 @@ import Questions from '../Questions/Questions';
 import store from '../../store';
 import Main from '../Main/Main';
 import Registration from '../Registration/Registration';
-import store from '../../store';
+
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/registration' element={<Registration />} />
-        <Route path='/' element={<Questions/>}/>
+        <Route path='/questions' element={<Questions/>}/>
       </Routes>
     </Provider>
   );
