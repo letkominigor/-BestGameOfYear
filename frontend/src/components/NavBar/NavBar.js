@@ -8,6 +8,7 @@ export default function NavBar(){
             <NavLink to="/game">Играть</NavLink>
             <NavLink to="/registration">Регистрация</NavLink>
             <NavLink to="/login">Вход</NavLink>
+            <NavLink to="/logout">Выход</NavLink>
             <div className="dot"></div>
         </nav>
     );

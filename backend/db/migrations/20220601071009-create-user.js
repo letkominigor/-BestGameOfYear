@@ -19,6 +19,7 @@ module.exports = {
       scores: {
         allowNull: false,
         type: Sequelize.TEXT,
+        default: 0
       },
       createdAt: {
         allowNull: false,
