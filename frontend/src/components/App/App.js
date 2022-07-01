@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import NavBar from '../NavBar/NavBar';
 
-import Questions from '../Questions/Questions';
+import Questions from '../Questions/Questions'
 import store from '../../store';
 import Main from '../Main/Main';
 import Registration from '../Registration/Registration';

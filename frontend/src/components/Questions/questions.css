@@ -1,16 +1,16 @@
 .quest {
-  position: fixed; /* фиксированное положение */
+  /* position: fixed; фиксированное положение */
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: rgba(0,0,0,0.5); /* цвет фона */
-  z-index: 1050;
+  z-index: 1;
   opacity: 0; /* по умолчанию модальное окно прозрачно */
   -webkit-transition: opacity 200ms ease-in; 
   -moz-transition: opacity 200ms ease-in;
   transition: opacity 200ms ease-in; /* анимация перехода */
-  pointer-events: none; /* элемент невидим для событий мыши */
+  /* pointer-events: none; элемент невидим для событий мыши */
   margin: 0;
   padding: 0;
 }
@@ -21,11 +21,12 @@
   overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
 }
 /* ширина модального окна и его отступы от экрана */
-.quest-dialog {
-  position: relative;
+/* .quest-dialog {
+  position: absolute;
   width: auto;
   margin: 10px;
-}
+  z-index: 100;
+} */
 @media (min-width: 576px) {
 .quest-dialog {
     max-width: 500px;
@@ -77,13 +78,13 @@
   padding: 15px;
   border-bottom: 1px solid #eceeef;
 }
-.quest-title {
+/* .quest-title {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1.5;
   font-size: 1.25rem;
   font-weight: 500;
-}
+} */
 /* свойства для кнопки "Закрыть" */
 .close {
   float: right;
@@ -135,3 +136,13 @@
 .click:hover {
   color: #F9F0DA;
 }
+
+.quest-container {
+ position: absolute;
+ width: 900px;
+ margin: 100px auto;
+ border: 2px solid black;
+ background-color: rgb(150, 1, 1);
+ z-index: 150;
+}
+
