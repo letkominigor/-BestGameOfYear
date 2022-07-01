@@ -18,6 +18,8 @@ const Question = () => {
       .then((question) => dispatch({ type: 'INIT_QUESTION', payload: question.questions }));
   }, [dispatch]);
 
+  console.log(quest)
+
   return (
 
 <>
