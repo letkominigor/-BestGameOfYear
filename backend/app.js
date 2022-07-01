@@ -7,6 +7,8 @@ const questionsRouter = require('./routes/question.routes');
 const authRouter = require('./routes/auth.routes');
 const regRouter = require('./routes/reg.routes');
 const logoutRouter = require('./routes/logout.routes');
+const scoreRouter = require('./routes/scoreRouter');
+
 
 
 const app = express();
@@ -16,6 +18,7 @@ const PORT = process.env.PORT || 2500;
 
 app.locals.count = 0;
 app.use('/logout', logoutRouter);
+app.use('/scores', scoreRouter);
 app.use('/questions', questionsRouter);
 app.use('/auth', authRouter);
 app.use('/registrate', regRouter);
