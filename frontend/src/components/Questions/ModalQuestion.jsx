@@ -8,6 +8,7 @@ import { RIGHT_ANSWER, WRONG_ANSWER } from '../../store/auth/actionTypes';
 
 
 const ModalQuestion = ({description, answer, id, point}) => {
+  const user = useSelector((state) => state.auth);
 
 
   const [vision, setVision] = useState(false)
@@ -26,6 +27,16 @@ const ModalQuestion = ({description, answer, id, point}) => {
     const otvet = event.target.answer.value
     setKek(false)
     if (otvet.trim().toLowerCase() === answer.toLowerCase()) {
+      fetch("/scores", {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            score: point,
+            login: user.login
+        }),
+      })
       alert('А ты харош!')
       setVision((ev) => !ev)
       dispatch({
@@ -33,6 +44,16 @@ const ModalQuestion = ({description, answer, id, point}) => {
       })
       
     } else {
+      fetch("/scores", {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            score: -point,
+            login: user.login
+        }),
+      })
       alert(`Неправильно! Правильный ответ: "${answer}"`)
       setVision((ev) => !ev)
       dispatch({
