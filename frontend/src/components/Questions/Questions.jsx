@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
-// import "./questions.css";
-import { useDispatch, useSelector } from "react-redux";
-import ModalQuestion from "./ModalQuestion.jsx";
+
+import React, { useEffect} from 'react';
+import './questions.css';
+import { useDispatch, useSelector } from 'react-redux';
+import ModalQuestion from './ModalQuestion';
+import { INIT_QUESTIONS } from '../../store/questions/questionReduser';
+
 
 const Questions = () => {
   const dispatch = useDispatch();
@@ -10,9 +13,7 @@ const Questions = () => {
   useEffect(() => {
     fetch("/questions")
       .then((response) => response.json())
-      .then((questions) =>
-        dispatch({ type: "INIT_QUESTIONS", payload: questions })
-      );
+      .then((questions) => dispatch({ type: INIT_QUESTIONS, payload: questions }));
   }, [dispatch]);
   console.log(quest);
   return (

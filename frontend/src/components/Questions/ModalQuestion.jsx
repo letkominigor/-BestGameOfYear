@@ -1,5 +1,7 @@
+
 import React, { useCallback, useEffect, useState } from 'react';
 import './questions.css';
+
 
 
 
@@ -21,6 +23,7 @@ const ModalQuestion = ({description, answer, id, point}) => {
     <h3 className="quest-title">{description}</h3>
     <input type="text" name="answer" />
     <button type="click">Ответить</button>
+
     </div>
 )}
     </>
