@@ -2,3 +2,14 @@ body {
   background: url(../Table/table-fon.png);
   -webkit-background-size: 100%;
 }
+
+.main-img{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  margin: 5px auto;
+  border: 2px solid red;
+}
