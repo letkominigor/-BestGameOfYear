@@ -4,7 +4,7 @@ router.get('/', (req, res) => {
   try {
     req.session.destroy()
     res.clearCookie('user_sid')
-    res.redirect('/')
+    res.send({succes: true})
   } catch (error) {
     res.send('error db')
   }
