@@ -5,6 +5,7 @@ import './Main.css'
 function Main() {
   return (
   <>
+  {/* <Question /> */}
   <div className="flipper" id="target">
 
     <div className="front">
