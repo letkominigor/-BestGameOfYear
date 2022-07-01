@@ -1,7 +1,7 @@
 const INIT_QUESTIONS = 'INIT_QUESTIONS'
 
 const initialState = {
-  topics: [],
+  themes: [],
   questions: []
 }
 
@@ -10,7 +10,7 @@ export default function questionReducer(state = initialState, action){
     case INIT_QUESTIONS:
       const stateCopy =  action.payload;
       
-      return stateCopy;
+      return {...stateCopy, themes: action.payload.themes,questions: action.payload.questions};
     default: return state
   }
   
